@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: uvicorn app.main:app --reload --reload-dir /usr/src/app/app --workers 1 --host 0.0.0.0 --port 80
+    volumes:
+      - ./app:/usr/src/app/app
+    ports:
+      - "80:80"
+    environment:
+      - NAME=World
+
+  tests:
+    build: .
+    command: pytest /usr/src/app/tests
+    volumes:
+      - ./app:/usr/src/app/app
+      - ./tests:/usr/src/app/tests
