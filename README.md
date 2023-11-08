@@ -28,3 +28,16 @@ Start the development server with Docker Compose:
 ```bash
 docker-compose up --build
 ```
+Running the Tests
+
+To run tests, use the following command:
+```bash 
+docker-compose exec web pytest /usr/src/app/tests
+```
+Built With
+
+    FastAPI - The web framework used
+    Uvicorn - ASGI server for FastAPI
+    Pytest - Testing Framework
+    Docker - Containerization Platform
+    Docker Compose - Tool for defining and running multi-container Docker applications
